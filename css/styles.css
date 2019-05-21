@@ -1,3 +1,29 @@
+body {
+  color: #40514E;
+  margin: 0;
+  text-align: center;
+}
+
+.box1{
+  margin: 20px auto 20px auto;
+  background-color: #f58b54;
+  border: solid;
+  border-color: #66BFBF;
+
+
+}
+
+.type{
+  background: orange;
+  display: inline-block;
+  border: solid;
+  padding: 3px 3px 3px 3px;
+}
+
 .res1{
-  width: 50px;
+  width: 50%;
+}
+
+.resDesc{
+  padding-bottom: 5px;
 }
