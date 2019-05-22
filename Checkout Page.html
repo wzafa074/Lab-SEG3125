@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-  
-  <h1>Checkout</h1>
-  <br>
-    
-      
-	  <style>
-		  div{
-		  padding: 25px 25px 25px 25px;
-		  }
-		  </style>
-        <h2>Your Order</h2>
-		<h2>$35</h2>
-		<select class="drop-down">
-          <option value="" disabled selected>Payment Method</option>
-          <option value="Debit">Debit</option>
-          <option value="Credit">Credit</option>
-          <option value="Cash">Cash On Delivery</option>
-        </select>
-		<input class="search" type="Address" placeholder="Address">
-		
-	  </div>
 
-	
-	
-	<br>
-	<button type="button">Place Order</button>
-	
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="checkout">
+      <h1>Checkout</h1>
+      <p>Total Before Tax: <b>$18.45</b></p>
+      <p>Tax: <b>$2.00</b></p>
+      <p>Total After Tax: <b>$20.45</b></p>
+      <form>
+        <input type="radio" name="card" value="Debit" checked> Debit
+        <input type="radio" name="card" value="Credit"> Credit
+        <input type="radio" name="card" value="Credit"> Cash
+      </form>
+      <form>
+        <input class="check-form" type="text" name="firstname" placeholder="Full Name"> <br>
+        <input class="check-form" type="text" name="firstname" placeholder="Address Line 1"> <br>
+        <input class="check-form" type="text" name="firstname" placeholder="Address Line 2 (Optional)"> <br>
+        <input class="check-form" type="text" name="firstname" placeholder="Postal Code"> <br>
+        <input class="check-form" type="text" name="firstname" placeholder="City"> <br>
+        <input class="check-form" type="text" name="firstname" placeholder="Province"> <br>
+      </form>
+      <button type="button" onclick="alert('Hello world!')">Checkout</button>
+
+    </div>
+  </div>
+
+</body>
+
 </html>

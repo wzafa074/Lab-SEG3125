@@ -4,7 +4,7 @@ body {
   text-align: center;
   background-color: #cb9b42;
 }
-
+/* CSS for Welcome Page  */
 #nav{
   background-color: #f79c1d;
 }
@@ -40,6 +40,8 @@ body {
   background-color: #ff6337;
 }
 
+/* CSS for List of Restaurants */
+
 .box1{
   margin: 20px auto 20px auto;
   background-color: #f79c1d;
@@ -60,4 +62,19 @@ body {
 
 .resDesc{
   padding-bottom: 5px;
+}
+
+/* CSS for Checkout Page */
+
+.checkout{
+  background-color: #f79c1d;
+  margin: 5% 12% 5% 12%;
+  border: solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.check-form{
+  margin: 6px auto 6px auto;
+  width: 50%;
 }
