@@ -4,6 +4,13 @@ body {
   text-align: center;
   background-color: #cb9b42;
 }
+
+.hr_index {
+  border: solid #cb9b42 2px;
+  border-bottom: none;
+  width: 40%;
+
+}
 /* CSS for Welcome Page  */
 #nav{
   background-color: #f79c1d;
@@ -30,7 +37,7 @@ body {
 }
 
 .search{
-  background-color: #ff6337;
+  /* background-color: #ff6337; */
   text-align: center;
   margin-top: 35px;
   margin-bottom: 10px;
@@ -62,6 +69,17 @@ body {
 
 .resDesc{
   padding-bottom: 5px;
+}
+
+/* CSS for Order Page */
+
+.order{
+  background-color: #f79c1d;
+  margin: 5% 16% 5% 16%;
+  border: solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
 }
 
 /* CSS for Checkout Page */
