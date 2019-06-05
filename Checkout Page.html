@@ -49,6 +49,8 @@
         <input type="radio" name="card" value="Credit"> Credit
         <input type="radio" name="card" value="Credit"> Cash
       </form>
+
+      <h2>Address</h2>
       <form>
         <input class="check-form" type="text" name="firstname" placeholder="Full Name"> <br>
         <input class="check-form" type="text" name="firstname" placeholder="Address Line 1"> <br>
@@ -56,6 +58,17 @@
         <input class="check-form" type="text" name="firstname" placeholder="Postal Code"> <br>
         <input class="check-form" type="text" name="firstname" placeholder="City"> <br>
         <input class="check-form" type="text" name="firstname" placeholder="Province"> <br>
+      </form>
+
+      <h2>Card Information</h2>
+      <form>
+        <input class="check-form" type="text" name="Name on Card" placeholder="Name on Card"> <br>
+        <input class="check-form" type="text" maxlength="16" name="Card Number" placeholder="Card Number"> <br>
+        <input class="check-form" type="number" min="01" max="12" name="Expiry Month" placeholder="Exp Month"> <br>
+        <input class="check-form" type="text" maxlength="4" name="Expriy Year" placeholder="Exp Year"> <br>
+        <input class="check-form" type="text" maxlength="3" name="CVV" placeholder="CVV"> <br>
+        <input type="checkbox" id="Billing" name="Billing" value="Billing" checked>
+        <label for="subscribeNews">Billing Address same as Shipping</label>
       </form>
       <button type="button" onclick="alert('Hello world!')">Confirm</button>
 
