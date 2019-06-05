@@ -226,6 +226,10 @@ body {
   border-color: #211717;
 }
 
+.order_row{
+  display: none;
+}
+
 /* CSS for Checkout Page */
 
 .checkout{
@@ -255,4 +259,77 @@ body {
 
 .foodDesc{
   margin: 10px auto 14px auto;
+}
+
+.shop-item {
+    margin: 30px;
+}
+
+.shop-item-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #40514E;
+    margin-bottom: 15px;
+}
+
+.shop-item-image {
+  width: 300px;
+  height: 175px;
+  margin: 15px auto 15px auto;
+}
+
+.shop-item-details {
+    /* display: flex; */
+    align-items: center;
+    padding: 5px;
+}
+
+.shop-item-price {
+    flex-grow: 1;
+    color: #40514E;
+    background: #ff6337;
+    display: inline-block;
+    border: solid;
+    padding: 2px 3px 2px 3px;
+}
+
+.shop-items {
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; */
+}
+
+.btn-primary {
+    color: white;
+    background-color: #b55400;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #211717;
+}
+
+.menu_hid{
+  display: none;;
+}
+
+.itemAddedPanel{
+  margin-left: auto;
+  margin-right: auto;
+  border: solid;
+  border-color: #66BFBF;
+  background-color: #85ef47;
+}
+
+.itemAddedText{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #40514E;
+  margin: 3px 3px 3px 3px;
 }

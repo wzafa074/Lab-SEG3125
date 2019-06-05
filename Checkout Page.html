@@ -41,23 +41,26 @@
     <div class="checkout">
       <h1>Checkout</h1>
       <hr class="hr_index">
-      <p>Total Before Tax: <b>$18.45</b></p>
-      <p>Tax: <b>$2.00</b></p>
-      <p>Total After Tax: <b>$20.45</b></p>
+      <p id="totalBeforeTax"></p>
+      <p id="tax"></p>
+      <p id="totalAfterTax"></p>
       <form>
-        <input type="radio" name="card" value="Debit" checked> Debit
-        <input type="radio" name="card" value="Credit"> Credit
-        <input type="radio" name="card" value="Credit"> Cash
+        <input onclick="cardPayment();" type="radio" name="card" value="Debit" checked> Debit
+        <input onclick="cardPayment();" type="radio" name="card" value="Credit"> Credit
+        <input onclick="cashPayment();" type="radio" name="card" value="Cash"> Cash
       </form>
       <form>
-        <input class="check-form" type="text" name="firstname" placeholder="Full Name"> <br>
-        <input class="check-form" type="text" name="firstname" placeholder="Address Line 1"> <br>
-        <input class="check-form" type="text" name="firstname" placeholder="Address Line 2 (Optional)"> <br>
-        <input class="check-form" type="text" name="firstname" placeholder="Postal Code"> <br>
-        <input class="check-form" type="text" name="firstname" placeholder="City"> <br>
-        <input class="check-form" type="text" name="firstname" placeholder="Province"> <br>
+        <input id="fullName" class="check-form" type="text" name="fullName" placeholder="Full Name"> <br>
+        <input id="addressLine1" class="check-form" type="text" name="addressLine1" placeholder="Address Line 1"> <br>
+        <input id="addressLine2" class="check-form" type="text" name="addressLine2" placeholder="Address Line 2 (Optional)"> <br>
+        <input id="addressPostalCode" class="check-form" type="text" name="postalCode" placeholder="Postal Code"> <br>
+        <input id="addressCity" class="check-form" type="text" name="city" placeholder="City"> <br>
+        <input id="addressProvince" class="check-form" type="text" name="province" placeholder="Province"> <br>
+        <input id="cardNumber" class="check-form" type="text" name="cardNumber" placeholder="Card Number" maxlength="19"> <br>
+        <input id="cardCVV" class="check-form" type="text" name="cardCVV" placeholder="CVV" maxlength="3"> <br>
+        <input id="cardExpirationDate" class="check-form" type="text" name="cardExpirationDate" placeholder="Card Expiration Date">
       </form>
-      <button type="button" onclick="alert('Hello world!')">Confirm</button>
+      <button onclick="placeOrder();" type="button" onclick="alert('Hello world!')">Place Order</button>
 
     </div>
   </div>
@@ -65,3 +68,74 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+var cashPaymentMethod=false;
+initializeCheckout();
+
+function initializeCheckout() {
+var totalBeforeTax = Number(localStorage.getItem("totalBeforeTax"));
+var tax=Math.round((totalBeforeTax*0.13) * 100) / 100;
+var totalAfterTax=totalBeforeTax+tax;
+
+if (totalBeforeTax!=null) {
+  document.getElementById("totalBeforeTax").innerHTML="Total Before Tax: <b>$" + totalBeforeTax + "</b>";
+  document.getElementById("tax").innerHTML="Tax: <b>$" + tax + "</b>";
+  document.getElementById("totalAfterTax").innerHTML="Total After Tax: <b>$" + totalAfterTax + "</b>";
+} else {
+  document.getElementById("totalBeforeTax").innerHTML="Total Before Tax: <b>$0</b>";
+  document.getElementById("tax").innerHTML="Tax: <b>$</b>";
+  document.getElementById("totalAfterTax").innerHTML="Total After Tax: <b>$0</b>";
+}
+}
+
+function cashPayment() {
+document.getElementById("cardNumber").style.display="none";
+document.getElementById("cardCVV").style.display="none";
+document.getElementById("cardExpirationDate").style.display="none";
+cashPaymentMethod=true;
+}
+
+function cardPayment() {
+document.getElementById("cardNumber").style.display="block";
+document.getElementById("cardCVV").style.display="block";
+document.getElementById("cardExpirationDate").style.display="block";
+cashPaymentMethod=false;
+}
+
+function placeOrder() {
+var fullName=document.getElementById("fullName").value;
+var addressLine1=document.getElementById("addressLine1").value;
+var addressLine2=document.getElementById("addressLine2").value;
+var addressCity=document.getElementById("addressCity").value;
+var addressProvince=document.getElementById("addressProvince").value;
+var addressPostalCode=document.getElementById("addressPostalCode").value;
+var cardNumber=document.getElementById("cardNumber").value;
+var cardCVV=document.getElementById("cardCVV").value;
+var cardExpirationDate=document.getElementById("cardExpirationDate").value;
+
+if (cashPaymentMethod) {
+  if (fullName=="" || addressLine1=="" || addressLine2=="" || addressCity=="" || addressProvince=="" || addressPostalCode=="") {
+    alert("Please make sure all the required information is filled.");
+     return;
+  } else {
+    alert("Thank you, your order has been received! \n" + "Full Name: " + fullName + ", Address Line 1: " + addressLine1 + ", address Line 2: " + addressLine2 + ", City: " + addressCity + ", Province: " + addressProvince + ", Postal Code: " + addressPostalCode );
+  }
+} else if (!cashPaymentMethod) {
+    if (fullName=="" || addressLine1=="" || addressLine2=="" || addressCity=="" || addressProvince=="" || addressPostalCode=="" || cardNumber=="" || cardCVV=="" || cardExpirationDate=="") {
+      alert("Please make sure all the required information is filled.");
+      return;
+    } else {
+      alert("Thank you, your order has been received! \n" + "Full Name: " + fullName + ", Address Line 1: " + addressLine1 + ", address Line 2: " + addressLine2 + ", City: " + addressCity + ", Province: " + addressProvince + ", Postal Code: " + addressPostalCode + ", Card Number: " + cardNumber + ", CVV: " + cardCVV + ", Card Expiration Date: " + cardExpirationDate);
+    }
+}
+
+document.getElementById("totalBeforeTax").innerHTML="Total Before Tax: <b>$" + "0" + "</b>";
+document.getElementById("tax").innerHTML="Tax: <b>$" + "0" + "</b>";
+document.getElementById("totalAfterTax").innerHTML="Total After Tax: <b>$" + "0" + "</b>";
+
+localStorage.clear();
+}
+
+
+</script>

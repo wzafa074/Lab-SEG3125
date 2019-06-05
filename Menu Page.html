@@ -6,7 +6,6 @@
   <title>Italian Menu</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="script/script.js" async></script>
 </head>
 
 <body>
@@ -52,7 +51,7 @@
           <img class="foodpic" src="images/pizza.jpg" alt="pizza">
           <h2 class="foodDesc">Pepperoni Pizza</h2>
           <p class="type">$20/Pizza</p>
-          <button type="button">add to cart</button>
+          <button onclick="addToCart('Pepperoni Pizza')" type="button">add to cart</button>
 
         </div>
       </div>
@@ -62,7 +61,7 @@
           <img class="foodpic" src="images/GarlicBread.jpg" alt="pizza" style="width:300px;height:175px;">
           <h2 class="foodDesc">Garlic Bread</h2>
           <p class="type">$10/loaf</p>
-          <button type="button">add to cart</button>
+          <button onclick="addToCart('Garlic Bread')" type="button">add to cart</button>
 
         </div>
       </div>
@@ -73,12 +72,12 @@
           <img class="foodpic" src="images/meatballs.jpg" alt="pizza" style="width:300px;height:175px;">
           <h2 class="foodDesc">Meatball Spaghetti</h2>
           <p class="type">$15/Serving</p>
-          <button type="button">add to cart</button>
+          <button onclick="addToCart('Meatball Spaghetti')" type="button">add to cart</button>
 
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6">
+      <!-- <div class="col-lg-4 col-md-6">
         <div class="box2">
 
           <img class="foodpic" src="images/Carbo.png" alt="Pasta Carbonara" style="width:300px;height:175px;">
@@ -169,12 +168,46 @@
           <p class="type">$2/Bottle</p>
           <button type="button">add to cart</button>
         </div>
-      </div>
+      </div> -->
+
+      <div id="alert" style="display: none;" class="itemAddedPanel">
+    		  <p id="alertMessage" class="itemAddedText"></p>
+    	</div>
 
     </div>
-
   </div>
 
 </body>
 
 </html>
+
+<script type="text/javascript">
+
+    function addToCart(menuItem) {
+  		addToLocalStorage(menuItem, 1);
+  		displayAlert(menuItem + " added to cart");
+  	}
+
+    function addToLocalStorage(menuItem, quantity) {
+
+		var localStorageObject = localStorage.getItem(menuItem);
+
+		if (localStorageObject==null) {
+			localStorage.setItem(menuItem, quantity);
+			// document.getElementById(menuItem).innerHTML=menuItem + " ... x" + quantity;
+		} else {
+			localStorageObject=Number(localStorageObject)+quantity;
+      console.log(localStorage);
+			localStorage.setItem(menuItem, localStorageObject);
+			// document.getElementById(menuItem).innerHTML=menuItem + " ... x" + localStorageObject;
+		  }
+	  }
+
+    function displayAlert(alertMessage) {
+  		document.getElementById("alertMessage").innerHTML=alertMessage;
+  		document.getElementById("alert").style.display="block";
+  		setTimeout(function(){ document.getElementById("alert").style.display="none"; document.getElementById("alertMessage").innerHTML="";}, 2000);
+	  }
+
+
+</script>
