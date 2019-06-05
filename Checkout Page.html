@@ -49,7 +49,6 @@ function cashCreditCheck() {
   </nav>
 
 
-
   <div class="container-fluid">
     <div class="checkout">
       <h1>Checkout</h1>
@@ -58,12 +57,14 @@ function cashCreditCheck() {
       <p>Tax: <b>$2.60</b></p>
       <p>Total After Tax: <b>$22.60</b></p>
       <br>
+      <h2>Card or Cash?</h2>
+
       <form>
         Card <input type="radio" onclick="javascript:cashCreditCheck();" name="yesno" id="yesCheck"> Cash <input type="radio" onclick="javascript:cashCreditCheck();" name="yesno" id="noCheck"><br>
     <div id="ifYes" style="display:none">
 
       <br>
-      
+
       <h2>Card Information</h2>
       <form>
         <input class="check-form" type="text" name="Name on Card" placeholder="Name on Card"> <br>
