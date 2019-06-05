@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
+<script type="text/javascript">
+
+function cashCreditCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.display = 'block';
+    }
+    else document.getElementById('ifYes').style.display = 'none';
+
+}
+</script>
+
 <head>
   <meta charset="utf-8">
   <title>Checkout</title>
@@ -45,9 +56,19 @@
       <p>Tax: <b>$2.00</b></p>
       <p>Total After Tax: <b>$20.45</b></p>
       <form>
-        <input type="radio" name="card" value="Debit" checked> Debit
-        <input type="radio" name="card" value="Credit"> Credit
-        <input type="radio" name="card" value="Credit"> Cash
+        Card <input type="radio" onclick="javascript:cashCreditCheck();" name="yesno" id="yesCheck"> Cash <input type="radio" onclick="javascript:cashCreditCheck();" name="yesno" id="noCheck"><br>
+    <div id="ifYes" style="display:none">
+      <h2>Card Information</h2>
+      <form>
+        <input class="check-form" type="text" name="Name on Card" placeholder="Name on Card"> <br>
+        <input class="check-form" type="text" maxlength="16" name="Card Number" placeholder="Card Number"> <br>
+        <input class="check-form" type="number" min="01" max="12" name="Expiry Month" placeholder="Exp Month"> <br>
+        <input class="check-form" type="text" maxlength="4" name="Expriy Year" placeholder="Exp Year"> <br>
+        <input class="check-form" type="text" maxlength="3" name="CVV" placeholder="CVV"> <br>
+        <input type="checkbox" id="Billing" name="Billing" value="Billing" checked>
+        <label for="subscribeNews">Billing Address same as Shipping</label>
+      </form>
+    </div>
       </form>
 
       <h2>Address</h2>
@@ -60,16 +81,7 @@
         <input class="check-form" type="text" name="firstname" placeholder="Province"> <br>
       </form>
 
-      <h2>Card Information</h2>
-      <form>
-        <input class="check-form" type="text" name="Name on Card" placeholder="Name on Card"> <br>
-        <input class="check-form" type="text" maxlength="16" name="Card Number" placeholder="Card Number"> <br>
-        <input class="check-form" type="number" min="01" max="12" name="Expiry Month" placeholder="Exp Month"> <br>
-        <input class="check-form" type="text" maxlength="4" name="Expriy Year" placeholder="Exp Year"> <br>
-        <input class="check-form" type="text" maxlength="3" name="CVV" placeholder="CVV"> <br>
-        <input type="checkbox" id="Billing" name="Billing" value="Billing" checked>
-        <label for="subscribeNews">Billing Address same as Shipping</label>
-      </form>
+
       <button type="button" onclick="alert('Hello world!')">Confirm</button>
 
     </div>
