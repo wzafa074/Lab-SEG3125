@@ -8,7 +8,7 @@ body {
 .hr_index {
   border: solid #cb9b42 2px;
   border-bottom: none;
-  width: 40%;
+  width: 50%;
 
 }
 /* CSS for Welcome Page  */
@@ -104,6 +104,126 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 
+}
+
+/* .content-section {
+    margin: 1em;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+} */
+
+.cart-header {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #40514E;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1.5px solid #cb9b42;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+    padding-left: 30px;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #40514E;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+.cart-item-title {
+    color: #40514E;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #66BFBF;
+    background-color: #eee;
+    color: #40514E;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid #40514E;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #40514E;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #40514E;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75em;
+    border-color: #211717;
+    background-color: #b55400;
+}
+
+.btn-purchase:hover{
+  background-color: #211717;
+  border-color: #211717;
 }
 
 /* CSS for Checkout Page */
