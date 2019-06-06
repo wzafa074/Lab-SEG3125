@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Italian Menu</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <nav id="nav" class="navbar navbar-expand-lg navbar-light">
+    <img class="Logo" src="images/fork&spoon.png" alt="Logo">
+    <h3>Quick Eats</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="Welcome Page.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="List of Restaurants.html">Restaurants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Menu Page.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Order Page.html">Order</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Checkout Page.html">Checkout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="intro_menu">
+  <h1>Menu</h1>
+  <h2> Hot and Fresh Food</h2>
+</div>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-lg-4 col-md-6">
+        <div class="box2">
+          <img class="foodpic" src="images/pizza.jpg" alt="pizza">
+          <h2 class="foodDesc">Pepperoni Pizza</h2>
+          <p class="type">$20/Pizza</p>
+          <button onclick="addToCart('Pepperoni Pizza')" type="button">add to cart</button>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="box2">
+          <img class="foodpic" src="images/GarlicBread.jpg" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Garlic Bread</h2>
+          <p class="type">$10/loaf</p>
+          <button onclick="addToCart('Garlic Bread')" type="button">add to cart</button>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/meatballs.jpg" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Meatball Spaghetti</h2>
+          <p class="type">$15/Serving</p>
+          <button onclick="addToCart('Meatball Spaghetti')" type="button">add to cart</button>
+
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/Carbo.png" alt="Pasta Carbonara" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Pasta Carbonara</h2>
+          <p class="type">$18/Serving</p>
+          <button type="button">add to cart</button>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/panini.jpg" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Ham and Cheese Panini</h2>
+          <p class="type">$12/Panini</p>
+          <button type="button">add to cart</button>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/panino.jpg" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Salami Panino</h2>
+          <p class="type">$14/Panino</p>
+          <button type="button">add to cart</button>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/pesto.png" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Capreese Salad</h2>
+          <p class="type">$16/Salad</p>
+          <button type="button">add to cart</button>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="box2">
+          <img class="foodpic" src="images/Bruschetta.jpg" alt="Bruschetta" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Bruschetta</h2>
+          <p class="type">$5/3 Bruschetta</p>
+          <button type="button">add to cart</button>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="box2">
+          <img class="foodpic" src="images/fruit.jpeg" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Fresh Fruit Smoothy</h2>
+          <p class="type">$5/Cup</p>
+          <button type="button">add to cart</button>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/tira.jpg" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Tiramisu</h2>
+          <p class="type">$7/Serving</p>
+          <button type="button">add to cart</button>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/cannoli.jpg" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Cannoli Pastries</h2>
+          <p class="type">$8/4 Cannoli</p>
+          <button type="button">add to cart</button>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="box2">
+          <img class="foodpic" src="images/water.jpg" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Sparkling Water</h2>
+          <p class="type">$2/Bottle</p>
+          <button type="button">add to cart</button>
+        </div>
+      </div> -->
+
+      <div id="alert" style="display: none;" class="itemAddedPanel">
+    		  <p id="alertMessage" class="itemAddedText"></p>
+    	</div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+    function addToCart(menuItem) {
+  		addToLocalStorage(menuItem, 1);
+  		displayAlert(menuItem + " added to cart");
+  	}
+
+    function addToLocalStorage(menuItem, quantity) {
+
+		var localStorageObject = localStorage.getItem(menuItem);
+
+		if (localStorageObject==null) {
+			localStorage.setItem(menuItem, quantity);
+			// document.getElementById(menuItem).innerHTML=menuItem + " ... x" + quantity;
+		} else {
+			localStorageObject=Number(localStorageObject)+quantity;
+      console.log(localStorage);
+			localStorage.setItem(menuItem, localStorageObject);
+			// document.getElementById(menuItem).innerHTML=menuItem + " ... x" + localStorageObject;
+		  }
+	  }
+
+    function displayAlert(alertMessage) {
+  		document.getElementById("alertMessage").innerHTML=alertMessage;
+  		document.getElementById("alert").style.display="block";
+  		setTimeout(function(){ document.getElementById("alert").style.display="none"; document.getElementById("alertMessage").innerHTML="";}, 2000);
+	  }
+
+
+</script>
